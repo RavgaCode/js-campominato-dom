@@ -65,11 +65,8 @@ main {
 .hard {
   width: calc(var(--square-size) * 7);
 }
-.bomb {
-  background-color: red;
-}
 .explosion {
-  background-color: blueviolet;
+  background-color: red;
 }
 .checked {
   background-color: green;
