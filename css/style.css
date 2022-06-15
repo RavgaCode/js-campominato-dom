@@ -64,6 +64,9 @@ header {
 .bomb {
   background-color: red;
 }
+.explosion {
+  background-color: blueviolet;
+}
 .checked {
   background-color: green;
 }
