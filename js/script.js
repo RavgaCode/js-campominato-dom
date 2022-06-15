@@ -48,7 +48,6 @@ function startGame() {
   let score = 0;
   result.innerText = score;
   const userMessage = document.getElementById("user-message");
-  let bombSquares = document.querySelectorAll("bomb");
   // Imposto il funzionamento di cambiare lo sfondo alle caselle cliccate, e verifico se questa è una bomba o se il gioco possa continuare.
   for (let i = 0; i < squares.length; i++) {
     const squareToClick = squares[i];
