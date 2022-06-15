@@ -39,6 +39,22 @@ function startGame() {
       squares[randomNumber].classList.add("bomb");
     }
   }
+  let result = document.getElementById("result");
+  // Imposto il funzionamento di cambiare lo sfondo alle caselle cliccate, e verifico se questa è una bomba
+  for (let i = 0; i < squares.length; i++) {
+    const squareToClick = squares[i];
+    let score = 0;
+    squareToClick.addEventListener("click", function () {
+      if (squareToClick.classList.contains("bomb")) {
+        alert("BOOOM! Hai perso");
+        return;
+      } else {
+        squareToClick.classList.add("checked");
+        score++;
+        result.innerText = score;
+      }
+    });
+  }
 }
 
 /*
