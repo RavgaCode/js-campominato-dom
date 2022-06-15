@@ -1,3 +1,7 @@
+:root {
+  --square-size: 60px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,4 +30,34 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
+}
+/* MAIN */
+.main-container {
+  width: 80%;
+  margin: auto;
+  padding: 3rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #7fffd4;
+}
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.square {
+  height: var(--square-size);
+  width: var(--square-size);
+  background-color: lightcyan;
+  border: 1px solid black;
+}
+/* FUNCTION UTILITIES */
+.easy {
+  width: calc(var(--square-size) * 10);
+}
+.medium {
+  width: calc(var(--square-size) * 9);
+}
+.hard {
+  width: calc(var(--square-size) * 7);
 }

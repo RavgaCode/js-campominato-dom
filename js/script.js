@@ -1,3 +1,33 @@
+const playButton = document.getElementById("play-btn");
+playButton.addEventListener("click", startGame);
+
+function startGame() {
+  const diffilculty = document.getElementById("difficulty").value;
+  let numberOfSquares;
+  const grid = document.querySelector("#grid");
+  grid.className = "";
+  grid.innerHTML = "";
+  if (diffilculty === "easy") {
+    numberOfSquares = 100;
+    grid.classList.add("easy");
+  } else if (diffilculty === "medium") {
+    numberOfSquares = 81;
+    grid.classList.add("medium");
+  } else if (diffilculty === "hard") {
+    numberOfSquares = 49;
+    grid.classList.add("hard");
+  }
+
+  const squares = [];
+
+  for (let i = 1; i <= numberOfSquares; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+    square.innerHTML = i;
+    squares.push(square);
+    grid.appendChild(square);
+  }
+}
 
 /*
 // Chiedo all'utente il grado di difficoltà tramite prompt
@@ -67,3 +97,4 @@ const bombGenerator = function (bombNumber, minRange, maxRange) {
   }
   return bombArray;
 };
+*/
