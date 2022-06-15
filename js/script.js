@@ -59,6 +59,7 @@ function startGame() {
         userMessage.innerHTML = `BOOOM! Hai perso!! Il tuo punteggio è ${score}`;
         // Inserisco il blocco ad ulteriori click sulla griglia a gioco concluso
         grid.style.pointerEvents = "none";
+        // Evidenzio tutte le bombe a gioco finito
         for (let b = 0; b < bombSquares.length; b++) {
           bombSquares[b].classList.add("explosion");
         }
