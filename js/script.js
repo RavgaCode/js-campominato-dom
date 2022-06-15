@@ -3,7 +3,7 @@ playButton.addEventListener("click", startGame);
 
 function startGame() {
   const diffilculty = document.getElementById("difficulty").value;
-  let numberOfSquares;
+  let numberOfSquares = 0;
   const grid = document.querySelector("#grid");
   grid.className = "";
   grid.innerHTML = "";
@@ -18,7 +18,7 @@ function startGame() {
     grid.classList.add("hard");
   }
 
-  const squares = [];
+  let squares = [];
 
   for (let i = 1; i <= numberOfSquares; i++) {
     const square = document.createElement("div");
@@ -28,11 +28,11 @@ function startGame() {
     grid.appendChild(square);
   }
   //   Creo un ciclo while che pushi dei numeri unici dentro l'array bomb, fino al massimo di bombNumber, inoltre aggiungo la classe "bomb" ai div square corrispondenti ai numeri pushati dentro l'array bomb
-  const bombNumber = 16;
+  const bombNumber = 40;
   let bombArray = [];
 
   while (bombArray.length < bombNumber) {
-    let randomNumber = Math.floor(Math.random() * numberOfSquares + 1);
+    let randomNumber = Math.floor(Math.random() * numberOfSquares);
 
     if (!bombArray.includes(randomNumber)) {
       bombArray.push(randomNumber);
@@ -44,22 +44,27 @@ function startGame() {
   let result = document.getElementById("score-display");
   let score = 0;
   result.innerText = score;
+
   // Imposto il funzionamento di cambiare lo sfondo alle caselle cliccate, e verifico se questa è una bomba
   for (let i = 0; i < squares.length; i++) {
     const squareToClick = squares[i];
+
     squareToClick.addEventListener("click", function () {
       if (squareToClick.classList.contains("bomb")) {
-        alert("BOOOM! Hai perso");
+        alert(`BOOOM! Hai perso!! Il tuo punteggio è ${score}`);
         return;
       } else {
         squareToClick.classList.add("checked");
         score++;
         result.innerText = score;
       }
+      // Imposto la condizione di vittoria
+      if (score === squares.length - bombArray.length) {
+        alert("HAI VINTO!");
+        return;
+      }
     });
   }
-}
-
 /*
 // Chiedo all'utente il grado di difficoltà tramite prompt
 const gameDifficulty = parseInt(
