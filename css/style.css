@@ -18,7 +18,7 @@ img {
 }
 /* HEADER */
 header {
-  height: 80px;
+  height: 10vh;
 }
 .columns {
   display: flex;
@@ -34,6 +34,7 @@ header {
 /* MAIN */
 main {
   background-color: #7fffd4;
+  height: 80vh;
 }
 .main-container {
   width: 80%;
@@ -54,6 +55,15 @@ main {
   width: var(--square-size);
   background-color: lightcyan;
   border: 1px solid black;
+}
+/* FOOTER */
+footer {
+  height: 10vh;
+}
+.footer-flex {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 /* FUNCTION UTILITIES */
 .easy {
