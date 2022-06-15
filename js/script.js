@@ -27,6 +27,18 @@ function startGame() {
     squares.push(square);
     grid.appendChild(square);
   }
+  //   Creo un ciclo while che pushi dei numeri unici dentro l'array bomb, fino al massimo di bombNumber, inoltre aggiungo la classe "bomb" ai div square corrispondenti ai numeri pushati dentro l'array bomb
+  const bombNumber = 16;
+  let bombArray = [];
+
+  while (bombArray.length < bombNumber) {
+    let randomNumber = Math.floor(Math.random() * numberOfSquares + 1);
+
+    if (!bombArray.includes(randomNumber)) {
+      bombArray.push(randomNumber);
+      squares[randomNumber].classList.add("bomb");
+    }
+  }
 }
 
 /*
