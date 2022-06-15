@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* COMMON */
+.container {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+}
+img {
+  max-width: 30px;
+}
+/* HEADER */
+header {
+  height: 80px;
+}
+.columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.col {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
